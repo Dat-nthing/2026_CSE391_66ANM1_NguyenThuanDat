@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Employee Form</title>
+</head>
+<body>
+
+  <h2>Employee Form</h2>
+
+  <form action="#" method="post">
+
+    <fieldset>
+      <legend><b>Basic Info</b></legend>
+
+      <table>
+        <tr>
+          <td><b>Employee ID</b></td>
+          <td><input type="text" name="employee_id" value="9"></td>
+        </tr>
+
+        <tr>
+          <td><b>Last Name</b></td>
+          <td><input type="text" name="last_name" value="Dodsworth"></td>
+        </tr>
+
+        <tr>
+          <td><b>First Name</b></td>
+          <td><input type="text" name="first_name" value="Anne"></td>
+        </tr>
+
+        <tr>
+          <td><b>Gender</b></td>
+          <td>
+            <input type="radio" name="gender" value="Male"> Male <br>
+            <input type="radio" name="gender" value="Female" checked> Female <br>
+            <input type="radio" name="gender" value="XXX"> XXX <br>
+            <input type="radio" name="gender" value="ZZZ"> ZZZ
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Title</b></td>
+          <td><input type="text" name="title" value="Sales Representative"></td>
+        </tr>
+
+        <tr>
+          <td><b>Suffix</b></td>
+          <td><input type="text" name="suffix" value="Ms."></td>
+        </tr>
+
+        <tr>
+          <td><b>BirthDate</b></td>
+          <td><input type="text" name="birth_date" value="1969-07-02 00:00:00"></td>
+        </tr>
+
+        <tr>
+          <td><b>HireDate</b></td>
+          <td><input type="text" name="hire_date" value="1994-11-15 00:00:00"></td>
+        </tr>
+
+        <tr>
+          <td><b>SSN # (if applicable)</b></td>
+          <td><input type="text" name="ssn"></td>
+        </tr>
+
+        <tr>
+          <td><b>Reports To</b></td>
+          <td>
+            <select name="reports_to">
+              <option value="Buchanan" selected>Buchanan</option>
+              <option value="Fuller">Fuller</option>
+              <option value="Leverling">Leverling</option>
+              <option value="Peacock">Peacock</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend><b>Contact Info</b></legend>
+
+      <table>
+        <tr>
+          <td><b>Email</b></td>
+          <td><input type="text" name="email" value="name@example.com"></td>
+        </tr>
+
+        <tr>
+          <td><b>Address</b></td>
+          <td><input type="text" name="address" value="7 Houndstooth Rd."></td>
+        </tr>
+
+        <tr>
+          <td><b>City</b></td>
+          <td><input type="text" name="city" value="London"></td>
+        </tr>
+
+        <tr>
+          <td><b>Region</b></td>
+          <td><input type="text" name="region"></td>
+        </tr>
+
+        <tr>
+          <td><b>Postal Code</b></td>
+          <td><input type="text" name="postal_code" value="WG2 7LT"></td>
+        </tr>
+
+        <tr>
+          <td><b>Country</b></td>
+          <td>
+            <select name="country">
+              <option value="Russian Federation" selected>Russian Federation</option>
+              <option value="Vietnam">Vietnam</option>
+              <option value="United States">United States</option>
+              <option value="United Kingdom">United Kingdom</option>
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>US Home Phone</b></td>
+          <td><input type="text" name="home_phone" value="(234)234-2342"></td>
+        </tr>
+
+        <tr>
+          <td><b>Photo</b></td>
+          <td><input type="file" name="photo"></td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <br>
+
+    <fieldset>
+      <legend><b>Optional Info</b></legend>
+
+      <table>
+        <tr>
+          <td><b>Notes</b></td>
+          <td>
+            <textarea name="notes" rows="7" cols="50">Anne has a BA degree in English from St. Lawrence College.
+She is fluent in French and German.</textarea>
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Preferred Shift</b></td>
+          <td>
+            <input type="radio" name="shift" value="Regular" checked> Regular <br>
+            <input type="radio" name="shift" value="Gravy Yard"> Gravy Yard
+          </td>
+        </tr>
+
+        <tr>
+          <td><b>Active?</b></td>
+          <td><input type="checkbox" name="active" checked> Yes</td>
+        </tr>
+
+        <tr>
+          <td><b>Are you human?</b></td>
+          <td>
+            <b>TIDAWO</b> &nbsp; <input type="button" value="Click to change">
+            <br><br>
+            <input type="text" name="captcha">
+          </td>
+        </tr>
+      </table>
+    </fieldset>
+
+    <br>
+
+    <input type="submit" value="Submit">
+    <input type="reset" value="Cancel">
+
+  </form>
+
+</body>
+</html>
