@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài 4 - Event Listeners</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      transition: 0.3s;
+    }
+
+    .dark-mode {
+      background: #1f2937;
+      color: white;
+    }
+
+    .box {
+      width: 260px;
+      padding: 18px;
+      background: #dbeafe;
+      border-radius: 8px;
+      text-align: center;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    .hovered {
+      background: #93c5fd;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 8px;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bài 4 - Event Listeners</h1>
+
+  <p id="message">Chưa có tương tác nào.</p>
+
+  <button id="click-btn">Bấm vào tôi</button>
+  <button id="theme-btn">Đổi màu nền</button>
+
+  <div id="hover-box" class="box">Di chuột vào đây</div>
+
+  <script>
+    const clickBtn = document.getElementById('click-btn');
+    const themeBtn = document.getElementById('theme-btn');
+    const message = document.getElementById('message');
+    const hoverBox = document.getElementById('hover-box');
+
+    clickBtn.addEventListener('click', function() {
+      message.textContent = 'Bạn vừa click vào nút!';
+      console.log('Listener 1: đổi textContent');
+    });
+
+    clickBtn.addEventListener('click', function() {
+      clickBtn.textContent = 'Đã bấm!';
+      console.log('Listener 2: đổi text nút');
+    });
+
+    hoverBox.addEventListener('mouseenter', function() {
+      hoverBox.textContent = 'Chuột đang ở trong box';
+      hoverBox.classList.add('hovered');
+      console.log('mouseenter xảy ra');
+    });
+
+    hoverBox.addEventListener('mouseleave', function() {
+      hoverBox.textContent = 'Di chuột vào đây';
+      hoverBox.classList.remove('hovered');
+      console.log('mouseleave xảy ra');
+    });
+
+    themeBtn.addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      console.log('Đã toggle dark-mode');
+    });
+  </script>
+</body>
+</html>

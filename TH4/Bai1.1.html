@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Quản lý điểm sinh viên</title>
+<style>
+body{font-family:Arial}
+table{border-collapse:collapse;width:600px;margin-top:20px}
+th,td{border:1px solid #ccc;padding:8px;text-align:center}
+.low{background:yellow}
+</style>
+</head>
+<body>
+
+<h2>Bảng điểm sinh viên</h2>
+
+<input id="name" placeholder="Họ tên">
+<input id="score" placeholder="Điểm">
+<button id="addBtn">Thêm</button>
+
+<table>
+<thead>
+<tr>
+<th>STT</th>
+<th>Họ tên</th>
+<th>Điểm</th>
+<th>Xếp loại</th>
+<th>Thao tác</th>
+</tr>
+</thead>
+<tbody id="tableBody"></tbody>
+</table>
+
+<p id="stats"></p>
+
+<script src="Bai1.1.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Danh sách sản phẩm</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <h1>Product Management</h1>
+      <nav>
+        <a class="btn btn-primary" href="add-product.html">+ Add product</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="card">
+      <div class="card-header table-header-row">
+        <h2>Danh sách sản phẩm</h2>
+        <input type="text" id="keyword" placeholder="Tìm theo tên hoặc danh mục..." />
+      </div>
+
+      <div id="listMessage" class="message hidden" aria-live="polite"></div>
+
+      <div class="table-wrap">
+        <table>
+          <caption>Danh sách sản phẩm lưu trong Local Storage</caption>
+          <thead>
+            <tr>
+              <th scope="col">Tên sản phẩm</th>
+              <th scope="col">Danh mục</th>
+              <th scope="col">Giá</th>
+              <th scope="col">Tồn kho</th>
+              <th scope="col">Tổng giá trị</th>
+              <th scope="col">Thao tác</th>
+            </tr>
+          </thead>
+          <tbody id="productTableBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+</body>
+</html>

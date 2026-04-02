@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài 2 - Modifying Elements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    .box {
+      background: #f9fafb;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    ul {
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="title">Bài 2 - Modifying Elements</h1>
+
+  <div class="box" id="content-box">
+    Đây là nội dung ban đầu của div.
+  </div>
+
+  <ul id="my-list">
+    <li>HTML</li>
+    <li>CSS</li>
+    <li id="delete-item">JavaScript cơ bản</li>
+  </ul>
+
+  <button id="run-btn">Chạy bài 2</button>
+
+  <script>
+    const runBtn = document.getElementById('run-btn');
+
+    runBtn.addEventListener('click', function() {
+      const title = document.getElementById('title');
+      title.textContent = 'Bài 2 - Đã đổi bằng textContent';
+
+      const contentBox = document.getElementById('content-box');
+      contentBox.innerHTML = '<strong>Nội dung mới:</strong> <span style="color:red">Được chèn bằng innerHTML</span>';
+
+      const newLi = document.createElement('li');
+      newLi.textContent = 'DOM Manipulation';
+
+      const myList = document.getElementById('my-list');
+      myList.appendChild(newLi);
+
+      const deleteItem = document.getElementById('delete-item');
+      if (deleteItem) {
+        deleteItem.remove();
+      }
+
+      console.log('Đã chạy xong bài Modifying Elements');
+    });
+  </script>
+</body>
+</html>

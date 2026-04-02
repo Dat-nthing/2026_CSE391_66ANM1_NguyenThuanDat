@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Bài 05 - HR Management</title>
+  <link rel="stylesheet" href="Bai5.css" />
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="left">
+      <strong class="brand">HR Management</strong>
+      <nav class="nav">
+        <a href="#">Home</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+
+    <div class="search">
+      <input type="search" placeholder="Search..." />
+      <button type="button">Search</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Employee</h2>
+        <button class="btn-add" id="openModal" type="button">+ Add</button>
+      </div>
+
+      <div class="table-wrap">
+        <table class="emp-table">
+          <thead>
+            <tr>
+              <th class="col-id">ID</th>
+              <th>Name</th>
+              <th>Email</th>
+              <th>Phone</th>
+              <th>Position</th>
+              <th class="col-action">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>Fatima Beatriz</td>
+              <td>FatimaBeatriz@gmail.com</td>
+              <td>0985674321</td>
+              <td>Staff</td>
+              <td>
+                <button class="btn btn-edit" type="button">Edit</button>
+                <button class="btn btn-del" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>2</td>
+              <td>Gabriel Hanna</td>
+              <td>GabrielHanna@gmail.com</td>
+              <td>0353674231</td>
+              <td>Staff</td>
+              <td>
+                <button class="btn btn-edit" type="button">Edit</button>
+                <button class="btn btn-del" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>3</td>
+              <td>Charles Diya</td>
+              <td>CharlesDiya@gmail.com</td>
+              <td>0347658833</td>
+              <td>Staff</td>
+              <td>
+                <button class="btn btn-edit" type="button">Edit</button>
+                <button class="btn btn-del" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>4</td>
+              <td>Frank Lamdo</td>
+              <td>FrankLamdo@gmail.com</td>
+              <td>0975444768</td>
+              <td>Manager</td>
+              <td>
+                <button class="btn btn-edit" type="button">Edit</button>
+                <button class="btn btn-del" type="button">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>5</td>
+              <td>Louis Tom</td>
+              <td>LouisTom@gmail.com</td>
+              <td>0789568223</td>
+              <td>Staff</td>
+              <td>
+                <button class="btn btn-edit" type="button">Edit</button>
+                <button class="btn btn-del" type="button">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="backdrop" id="backdrop">
+    <div class="modal">
+      <div class="modal-head">
+        <strong>New Employee</strong>
+        <button class="close" id="closeModal" type="button">×</button>
+      </div>
+
+      <form class="modal-body" action="#" method="post">
+        <div class="form-grid">
+          <div class="field">
+            <label for="mName">Name</label>
+            <input id="mName" type="text" />
+          </div>
+
+          <div class="field">
+            <label for="mEmail">Email</label>
+            <input id="mEmail" type="email" />
+          </div>
+
+          <div class="field">
+            <label for="mPhone">Phone</label>
+            <input id="mPhone" type="tel" />
+          </div>
+
+          <div class="field">
+            <label for="mPosition">Position</label>
+            <select id="mPosition">
+              <option value="">-- Select Position --</option>
+              <option>Staff</option>
+              <option>Manager</option>
+              <option>CEO</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label>Sex</label>
+            <div class="radio-row">
+              <label><input type="radio" name="sex" checked /> Male</label>
+              <label><input type="radio" name="sex" /> Female</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-save" type="submit">Save</button>
+          <button class="btn-cancel" id="cancelBtn" type="button">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const openBtn = document.getElementById("openModal");
+    const backdrop = document.getElementById("backdrop");
+    const closeBtn = document.getElementById("closeModal");
+    const cancelBtn = document.getElementById("cancelBtn");
+
+    function openModal() {
+      backdrop.style.display = "flex";
+    }
+    function closeModal() {
+      backdrop.style.display = "none";
+    }
+
+    openBtn.addEventListener("click", openModal);
+    closeBtn.addEventListener("click", closeModal);
+    cancelBtn.addEventListener("click", closeModal);
+
+    backdrop.addEventListener("click", (e) => {
+      if (e.target === backdrop) closeModal();
+    });
+  </script>
+</body>
+</html>

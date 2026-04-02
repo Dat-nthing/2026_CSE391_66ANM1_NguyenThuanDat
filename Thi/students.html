@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Management</title>
+  <link rel="stylesheet" href="student-style.css" />
+  <script src="student-app.js" defer></script>
+</head>
+<body>
+  <div class="app-shell">
+    <div class="container">
+      <header class="page-header">
+        <h1>STUDENT MANAGEMENT SYSTEM</h1>
+        <div class="summary-bar" id="summaryBar">
+          Tổng số sinh viên: <strong id="totalStudents">0</strong> |
+          Điểm TB lớp: <strong id="averageGpa">0.00</strong>
+        </div>
+        <div class="toolbar">
+          <button class="btn btn-success" id="openAddModalBtn">THÊM SINH VIÊN</button>
+        </div>
+      </header>
+
+      <section class="table-card">
+        <div id="listMessage" class="message hidden" aria-live="polite"></div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>MÃ SV</th>
+                <th>HỌ VÀ TÊN</th>
+                <th>NGÀY SINH</th>
+                <th>LỚP</th>
+                <th>ĐTB</th>
+                <th>EMAIL</th>
+                <th>ACTIONS</th>
+              </tr>
+            </thead>
+            <tbody id="studentTableBody"></tbody>
+          </table>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <div class="modal hidden" id="studentModal">
+    <div class="modal-overlay" id="closeModalOverlay"></div>
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 id="modalTitle">Thêm/Sửa Sinh Viên</h2>
+        <button class="icon-btn" id="closeModalBtn" aria-label="Đóng">&times;</button>
+      </div>
+
+      <form id="studentForm" novalidate>
+        <input type="hidden" id="editingStudentId" />
+
+        <div class="form-group">
+          <label for="studentId">Mã sinh viên <span>*</span></label>
+          <input type="text" id="studentId" name="studentId" placeholder="VD: SV123456" />
+          <small class="error" id="studentIdError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="fullName">Họ và tên <span>*</span></label>
+          <input type="text" id="fullName" name="fullName" placeholder="Nhập họ và tên" />
+          <small class="error" id="fullNameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="dateOfBirth">Ngày sinh <span>*</span></label>
+          <input type="date" id="dateOfBirth" name="dateOfBirth" />
+          <small class="error" id="dateOfBirthError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="className">Lớp học</label>
+          <select id="className" name="className">
+            <option value="">Chọn lớp</option>
+            <option value="A">A</option>
+            <option value="B">B</option>
+            <option value="C">C</option>
+            <option value="D">D</option>
+          </select>
+          <small class="error" id="classNameError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="gpa">Điểm trung bình <span>*</span></label>
+          <input type="number" id="gpa" name="gpa" placeholder="0 - 10" min="0" max="10" step="0.01" />
+          <small class="error" id="gpaError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email sinh viên <span>*</span></label>
+          <input type="email" id="email" name="email" placeholder="abc@student.edu.vn" />
+          <small class="error" id="emailError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Mật khẩu tài khoản <span>*</span></label>
+          <input type="password" id="password" name="password" placeholder="Tối thiểu 8 ký tự" />
+          <small class="error" id="passwordError"></small>
+        </div>
+
+        <div class="form-group">
+          <label for="confirmPassword">Xác nhận mật khẩu <span>*</span></label>
+          <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Nhập lại mật khẩu" />
+          <small class="error" id="confirmPasswordError"></small>
+        </div>
+
+        <div id="formMessage" class="message hidden" aria-live="polite"></div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-success">LƯU SINH VIÊN</button>
+          <button type="button" class="btn btn-danger" id="cancelBtn">HỦY</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+</html>

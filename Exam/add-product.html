@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Thêm / Sửa sản phẩm</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="container topbar-inner">
+      <h1>Product Management</h1>
+      <nav>
+        <a class="btn btn-outline" href="products.html">Xem danh sách</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container page-grid">
+    <section class="card">
+      <div class="card-header">
+        <h2 id="formTitle">Thêm / Sửa sản phẩm</h2>
+      </div>
+
+      <form id="productForm" novalidate>
+        <input type="hidden" id="productId" />
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="name">Tên sản phẩm</label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nhập tên sản phẩm"
+            />
+            <small class="error" id="nameError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="price">Giá sản phẩm</label>
+            <input
+              type="number"
+              id="price"
+              name="price"
+              placeholder="Nhập giá sản phẩm"
+              min="0"
+              step="0.01"
+            />
+            <small class="error" id="priceError"></small>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="description">Mô tả sản phẩm</label>
+          <textarea
+            id="description"
+            name="description"
+            rows="4"
+            placeholder="Nhập mô tả sản phẩm"
+          ></textarea>
+          <small class="error" id="descriptionError"></small>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="category">Danh mục</label>
+            <select id="category" name="category">
+              <option value="">-- Chọn danh mục --</option>
+              <option value="Console">Console</option>
+              <option value="PC/Desktop">PC/Desktop</option>
+              <option value="Gaming">Gaming</option>
+              <option value="Monitor">Monitor</option>
+              <option value="Smartphone">Smartphone</option>
+              <option value="Accessory">Accessory</option>
+            </select>
+            <small class="error" id="categoryError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="stock">Số lượng tồn kho</label>
+            <input
+              type="number"
+              id="stock"
+              name="stock"
+              placeholder="Nhập số lượng tồn kho"
+              min="0"
+              step="1"
+            />
+            <small class="error" id="stockError"></small>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="form-group">
+            <label for="password">Mật khẩu quản trị</label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              placeholder="Nhập mật khẩu quản trị"
+            />
+            <small class="error" id="passwordError"></small>
+          </div>
+
+          <div class="form-group">
+            <label for="confirmPassword">Xác nhận mật khẩu</label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              placeholder="Nhập lại mật khẩu"
+            />
+            <small class="error" id="confirmPasswordError"></small>
+          </div>
+        </div>
+
+        <div id="formMessage" class="message hidden" aria-live="polite"></div>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Lưu sản phẩm</button>
+          <button type="reset" class="btn btn-secondary" id="resetBtn">Hủy</button>
+        </div>
+      </form>
+    </section>
+  </main>
+</body>
+</html>

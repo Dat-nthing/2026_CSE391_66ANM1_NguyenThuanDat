@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài 1 - Selecting Elements</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    .card {
+      background: #f3f7ff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+
+    .item {
+      padding: 8px;
+      background: #dbeafe;
+      margin: 6px 0;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <h1 id="main-title">Bài 1 - Selecting Elements</h1>
+
+  <div class="card">
+    <p id="intro">Đây là đoạn văn có id là intro.</p>
+
+    <div class="item">Phần tử item 1</div>
+    <div class="item">Phần tử item 2</div>
+    <div class="item">Phần tử item 3</div>
+  </div>
+
+  <script>
+    const firstItem = document.querySelector('.item');
+    console.log('querySelector(.item):', firstItem);
+
+    const allItems = document.querySelectorAll('.item');
+    console.log('querySelectorAll(.item):', allItems);
+
+    allItems.forEach(function(item, index) {
+      console.log('Item', index + 1, ':', item.textContent);
+    });
+
+    const introText = document.getElementById('intro');
+    console.log('getElementById("intro"):', introText);
+
+    const mainTitle = document.getElementById('main-title');
+    console.log('getElementById("main-title"):', mainTitle);
+  </script>
+</body>
+</html>

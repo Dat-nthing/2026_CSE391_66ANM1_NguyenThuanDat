@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bài 3 - Attributes & Classes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+    }
+
+    img {
+      width: 250px;
+      border-radius: 8px;
+      display: block;
+      margin-bottom: 12px;
+    }
+
+    .box {
+      padding: 12px;
+      background: #e5e7eb;
+      border-radius: 8px;
+      margin-bottom: 12px;
+    }
+
+    .active {
+      background: #bbf7d0;
+      border: 2px solid green;
+    }
+
+    .highlight {
+      color: red;
+      font-weight: bold;
+    }
+
+    button {
+      padding: 10px 16px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-right: 8px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Bài 3 - Attributes & Classes</h1>
+
+  <img
+    id="my-image"
+    src="https://via.placeholder.com/250x150?text=Anh+cu"
+    alt="Ảnh cũ"
+  />
+
+  <p id="status" class="box">Đây là phần tử để thực hành classList.</p>
+
+  <button id="change-btn">Đổi ảnh và class</button>
+  <button id="check-btn">Kiểm tra class active</button>
+
+  <script>
+    const changeBtn = document.getElementById('change-btn');
+    const checkBtn = document.getElementById('check-btn');
+
+    changeBtn.addEventListener('click', function() {
+      const img = document.getElementById('my-image');
+      const status = document.getElementById('status');
+
+      img.setAttribute('src', 'https://via.placeholder.com/250x150?text=Anh+moi');
+
+      img.alt = 'Ảnh mới';
+
+      status.classList.add('active');
+
+      status.classList.remove('box');
+
+      status.classList.toggle('highlight');
+
+      status.textContent = 'Ảnh và class đã được cập nhật';
+
+      console.log('src hiện tại:', img.getAttribute('src'));
+      console.log('alt hiện tại:', img.alt);
+      console.log('class hiện tại:', status.className);
+    });
+
+    checkBtn.addEventListener('click', function() {
+      const status = document.getElementById('status');
+      const result = status.classList.contains('active');
+
+      console.log('Có class active không?', result);
+
+      if (result) {
+        alert('Phần tử đang có class active');
+      } else {
+        alert('Phần tử chưa có class active');
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bài 2.1 - Form Đăng Ký</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+
+    .form-group {
+      margin-bottom: 16px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      font-size: 15px;
+      box-sizing: border-box;
+    }
+
+    .error {
+      color: red;
+      font-size: 14px;
+      display: block;
+      margin-top: 4px;
+    }
+
+    .invalid {
+      border: 2px solid red;
+    }
+
+    .valid {
+      border: 2px solid green;
+    }
+
+    .radio-group, .checkbox-group {
+      margin-top: 8px;
+    }
+
+    button {
+      padding: 10px 16px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    #successMessage {
+      display: none;
+      padding: 20px;
+      background: #e6ffe6;
+      border: 1px solid green;
+      color: green;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Form Đăng Ký Tài Khoản</h1>
+
+  <form id="registerForm">
+    <div class="form-group">
+      <label for="fullname">Họ và tên</label>
+      <input type="text" id="fullname">
+      <span class="error" id="fullnameError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="email">Email</label>
+      <input type="text" id="email">
+      <span class="error" id="emailError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="phone">Số điện thoại</label>
+      <input type="text" id="phone">
+      <span class="error" id="phoneError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Mật khẩu</label>
+      <input type="password" id="password">
+      <span class="error" id="passwordError"></span>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Xác nhận mật khẩu</label>
+      <input type="password" id="confirmPassword">
+      <span class="error" id="confirmPasswordError"></span>
+    </div>
+
+    <div class="form-group">
+      <label>Giới tính</label>
+      <div class="radio-group">
+        <input type="radio" name="gender" value="Nam"> Nam
+        <input type="radio" name="gender" value="Nữ"> Nữ
+        <input type="radio" name="gender" value="Khác"> Khác
+      </div>
+      <span class="error" id="genderError"></span>
+    </div>
+
+    <div class="form-group">
+      <div class="checkbox-group">
+        <input type="checkbox" id="terms"> Tôi đồng ý với điều khoản
+      </div>
+      <span class="error" id="termsError"></span>
+    </div>
+
+    <button type="submit">Đăng ký</button>
+  </form>
+
+  <div id="successMessage"></div>
+
+  <script src="Bai2.1.js"></script>
+</body>
+</html>
